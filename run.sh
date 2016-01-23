@@ -1,0 +1,1 @@
+spark-submit --class com.dhruv.Main --master yarn-cluster sparkorc-0.0.1-jar-with-dependencies.jar
