@@ -10,7 +10,7 @@ object Main {
     val sparkConf = new SparkConf().setAppName("Spark to Hive examples")
     val sc = new SparkContext(sparkConf)
     val hiveContext = new org.apache.spark.sql.hive.HiveContext(sc)
-    val df = hiveContext.read.json("file:///usr/hdp/current/spark-client/examples/src/main/resources/people.json")
-    df.write.mode(SaveMode.Overwrite).format("orc").saveAsTable("novetta_people")
+    val df = hiveContext.read.json("hdfs:///user/dhruv/people.json")
+    df.write.mode(SaveMode.Overwrite).format("orc").saveAsTable("novetta_people_2")
   }
 }
